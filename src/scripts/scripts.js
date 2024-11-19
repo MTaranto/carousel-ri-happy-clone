@@ -292,9 +292,9 @@ function initializedSlick() {
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true
-  });
+});
 
-  slickInitialized = true;
+slickInitialized = true;
 }
 
 function renderProducts(products) {
@@ -310,12 +310,12 @@ function renderProducts(products) {
         <p class="installments">ou ${product.installments}x de ${product.installmentValue} sem juros</p>
         <button class="adicionar">Comprar</button>
         <p class="seller">${product.seller === "RiHappy" ? `Vendido e entregue por <span class="sellerType">${product.seller}</span>` : `Oferta por <span class="sellerType">${product.seller}</span>`}</p>
-    `;
+      `;
 
-    productCarousel.innerHTML += productElement
+  productCarousel.innerHTML += productElement
   })
 
-  initializedSlick();
+initializedSlick();
 }
 
 function handleClickTab(event) {
@@ -334,7 +334,6 @@ function handleClickTab(event) {
     renderProducts(novidades)
   } else if(category === 'mais_vendidos') {
     renderProducts(mais_vendidos)
-    console.log('mais vendidos')
   } else if(category === 'fantasias') {
     renderProducts(fantasias)
   } else if(category === 'jogos') {
@@ -345,8 +344,9 @@ function handleClickTab(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
- renderProducts(novidades);
+  renderProducts(novidades)
 
- const tabs = document.querySelectorAll('.tab-link')
- tabs.forEach(tab => tab.addEventListener('click', handleClickTab))
+  const tabs = document.querySelectorAll('.tab-link')
+
+  tabs.forEach(tab => tab.addEventListener('click', handleClickTab))
 })
